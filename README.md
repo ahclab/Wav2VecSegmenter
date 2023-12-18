@@ -23,7 +23,7 @@ bash runs/setup_tools.sh
 Download MuST-C v2 en-de to $MUSTC_ROOT from [here](https://ict.fbk.eu/must-c/).
 Environment variables are listed in `runs/path.sh`.
 
-### Download a pretrained model
+### Download a segmentation model
 Download a pretrained model (*large+all* in the paper) and a config file to $SEG_MODEL_PATH from [here](https://drive.google.com/uc?export=download&id=11UDGHVqm9aHcyfhZulkkipEDf7s3YjZ1).
 
 
