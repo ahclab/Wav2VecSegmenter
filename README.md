@@ -31,13 +31,18 @@ Download a pretrained model (*large+all* in the paper) and a config file to $SEG
 Segment the MuST-C En-De tst-COMMON set with the segmentation model:
 
 ```
-ckpt_path=${SEG_MODEL_PATH}/large+all/lna_l24_ft24/ckpts/checkpoint.pt
+SEG_MODEL_PATH=${PWD}/models/segmentation
+
+ckpt_path=${SEG_MODEL_PATH}/large+all/lna_l24_ft24/ckpts/epoch-15_best_eval_f1.pt
 config_path=${SEG_MODEL_PATH}/large+all/.hydra/config.yaml
 python segment.py \
   ckpt_path=${ckpt_path} \
   config_path=${config_path} \
   output_dir=results/mustc_ende_tst-COMMON
 ```
+
+A custom segmentation yaml file is saved to `results/mustc_ende_tst-COMMON/custom_segments.yaml`.
+
 We used [Hydra](https://hydra.cc/) to manage configurations. See `conf/segment.yaml` for detail.
 
 Set the data to be segmented in `infer_data`; to run `segment.py`, the following information needs to be written in the `infer_data/*.yaml` file:
