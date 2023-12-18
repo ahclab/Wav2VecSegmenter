@@ -1,0 +1,43 @@
+defaults:
+  - _self_
+  - algorithm: dac
+  - infer_data: mustc_ende_tst-COMMON
+
+work_dir: ${hydra:runtime.cwd}
+
+project_name: w2v_segment_infer
+log_wandb: True
+group:
+tags:
+notes:
+outputs: ???  # segmentation model outputs dir
+base_cfg: ${outputs}/.hydra
+ckpt: ???
+batch_size: 14
+inference_segment_length: 20
+inference_times: 1
+cust_seg_yaml: custom_segments.yaml
+
+# ST settings
+fairseq_root: ${.work_dir}/tools/fairseq
+st_model_dir: ${.work_dir}/models/st/joint-s2t-mustc-en-de
+st_ckpt: checkpoint_ave_10.pt
+mwersegmenter_root: ${.work_dir}/tools/mwerSegmenter
+st_metrics: [bleu, bertscore]
+bleurt_path: ${.work_dir}/models/BLEURT-20
+
+hydra:
+  run:
+    dir: ${outputs}/infer_outputs/${hydra.job.override_dirname}
+  sweep:
+    dir: ${outputs}/infer_outputs
+    subdir: ${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - group
+          - outputs
+          - base_cfg
+          - batch_size
+          - st_metrics

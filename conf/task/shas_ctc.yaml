@@ -1,0 +1,24 @@
+autoregression: False
+
+model:
+  _target_: lib.models.SHASWithCTC
+  wav2vec_model_name: facebook/wav2vec2-xls-r-300m
+  wav2vec_keep_layers: 15
+  n_transformer_enc_layers: 1
+  n_transformer_enc_heads: 8
+  init_dropout: 0.1
+
+train_generator:
+  _target_: lib.dataset.RandomDataloaderGenerator
+
+eval_generator:
+  _target_: lib.dataset.FixedDataloaderGenerator
+  inference_times: 1
+
+vocab:
+  _target_: lib.datautils.UppercasedCharVocabulary
+
+loss:
+  _target_: torch.nn.CTCLoss
+  tag: ctc
+  reduction: mean

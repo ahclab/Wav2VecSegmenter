@@ -1,0 +1,7 @@
+tag: pthr
+max_segment_length: 28
+min_segment_length: 0.2
+max_lerp_range: 4
+min_lerp_range: 0.4
+threshold: 0.1
+moving_average_window: 0.1

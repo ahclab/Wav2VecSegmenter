@@ -1,0 +1,24 @@
+autoregression: False
+
+model:
+  _target_: lib.models.SHASWithSSL
+  wav2vec_model_name: facebook/wav2vec2-large-960h-lv60-self
+  finetune_wav2vec: False
+  n_transformer_enc_layers: 1
+  n_transformer_enc_heads: 8
+  init_dropout: 0.1
+
+train_generator:
+  _target_: lib.dataset.RandomDataloaderGenerator
+
+eval_generator:
+  _target_: lib.dataset.FixedDataloaderGenerator
+  inference_times: 1
+
+vocab:
+  _target_: lib.datautils.UppercasedCharVocabulary
+
+loss:
+  _target_: torch.nn.CrossEntropyLoss
+  tag: ssl
+  reduction: none

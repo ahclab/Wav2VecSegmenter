@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - task: shas
+  - data: mustc_ende
+  - st_eval: inference_dac
+  - st_eval_online: inference_pthr
+
+work_dir: ${hydra:runtime.cwd}
+
+project_name: w2v_segment
+exp_name: shas
+batch_size: 14
+learning_rate: 2.5e-4
+save_ckpts: True
+keep_last_ckpts: 8
+keep_best_ckpt: True
+best_ckpt_metric: eval_f1
+perform_st_evaluation: False
+finetune_from_model:
+print_every_steps: 100
+save_every_steps: 999999
+max_epochs: 16
+update_freq: 20
+segment_length: 20
+log_wandb: True
+group:
+notes:
+tags:

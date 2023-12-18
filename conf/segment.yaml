@@ -1,0 +1,30 @@
+defaults:
+  - _self_
+  - algorithm: pthr
+  - infer_data: mustc_ende_tst-COMMON
+
+work_dir: ${hydra:runtime.cwd}
+
+ckpt_path: ???
+config_path: ???
+output_dir: ???
+cust_seg_yaml: custom_segments.yaml
+batch_size: 14
+inference_segment_length: 20
+inference_times: 1
+
+hydra:
+  run:
+    dir: ${output_dir}/${hydra.job.override_dirname}
+  sweep:
+    dir: ${output_dir}
+    subdir: ${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - ckpt_path
+          - config_path
+          - output_dir
+          - cust_seg_yaml
+          - batch_size

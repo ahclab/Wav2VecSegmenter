@@ -1,0 +1,3 @@
+tag: dac_logits
+max_segment_length: 18
+min_segment_length: 0.2

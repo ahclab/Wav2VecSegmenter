@@ -1,0 +1,16 @@
+37c37
+<     $SCRIPTDIR/sgm2mref.py $referencesgmfile | $SCRIPTDIR/normalizeTextNIST.pl -c > $tmpdir/$tmpmref
+---
+>     python2 $SCRIPTDIR/sgm2mref.py $referencesgmfile | $SCRIPTDIR/normalizeTextNIST.pl -c > $tmpdir/$tmpmref
+42c42
+<     $SCRIPTDIR/sgm2mref.py $referencesgmfile | $SCRIPTDIR/normalizeTextNIST.pl > $tmpdir/$tmpmref
+---
+>     python2 $SCRIPTDIR/sgm2mref.py $referencesgmfile | $SCRIPTDIR/normalizeTextNIST.pl > $tmpdir/$tmpmref
+47c47
+< $SCRIPTDIR/sgm2mref.py $referencesgmfile > $tmpdir/$tmpmref
+---
+> python2 $SCRIPTDIR/sgm2mref.py $referencesgmfile > $tmpdir/$tmpmref
+57c57
+< $SCRIPTDIR/hyp2sgm.py --source=$sourcesgmfile --id=$sysid --targetLang=${language} $tmpdir/$tmpresegmentedfile > $outputsgmfile
+---
+> python2 $SCRIPTDIR/hyp2sgm.py --source=$sourcesgmfile --id=$sysid --targetLang=${language} $tmpdir/$tmpresegmentedfile > $outputsgmfile

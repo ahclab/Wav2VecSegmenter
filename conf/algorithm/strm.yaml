@@ -1,0 +1,5 @@
+tag: strm
+max_segment_length: 18
+min_segment_length: 0.2
+min_pause_length: 0.2
+threshold: 0.5

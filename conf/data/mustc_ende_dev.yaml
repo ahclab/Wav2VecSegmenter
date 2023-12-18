@@ -1,0 +1,9 @@
+train:
+  talk_list: ${work_dir}/data/training/MUSTC/en-de/dev_talks.tsv
+  segments_list: ${work_dir}/data/training/MUSTC/en-de/dev_segments.tsv
+  segment_length: ${segment_length}
+
+eval:
+  talk_list: ${work_dir}/data/training/MUSTC/en-de/dev_talks.tsv
+  segments_list: ${work_dir}/data/training/MUSTC/en-de/dev_segments.tsv
+  segment_length: ${segment_length}

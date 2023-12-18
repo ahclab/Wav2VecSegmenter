@@ -1,0 +1,8 @@
+data_dir: ${work_dir}/data/toydata/MuST-C_en-de_ted_1
+src_lang: en
+tgt_lang: de
+
+wav_dir: ${.data_dir}/wav
+orig_seg_yaml: ${.data_dir}/txt/ted_1_talks.yaml
+orig_src_txt: ${.data_dir}/txt/ted_1_talks.en
+orig_tgt_txt: ${.data_dir}/txt/ted_1_talks.de

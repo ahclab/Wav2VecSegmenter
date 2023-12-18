@@ -1,0 +1,8 @@
+data_dir: ${work_dir}/data/corpus/Europarl-ST_mustc_format/v1_1/en-de/data
+src_lang: en
+tgt_lang: de
+
+wav_dir: ${.data_dir}/test/wav
+orig_seg_yaml: ${.data_dir}/test/txt/test.yaml
+orig_src_txt: ${.data_dir}/test/txt/test.en
+orig_tgt_txt: ${.data_dir}/test/txt/test.de

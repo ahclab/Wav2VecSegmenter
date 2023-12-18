@@ -1,0 +1,20 @@
+defaults:
+  - _self_
+  - algorithm: strm
+  - infer_data: mustc_ende_dev
+#  - infer_data: toy
+
+work_dir: ${hydra:runtime.cwd}
+
+batch_size: 1
+inference_segment_length: 20
+inference_times: 1
+cust_seg_yaml: custom_segments.yaml
+
+# ST settings
+fairseq_root: ${.work_dir}/tools/fairseq
+st_model_dir: ${.work_dir}/models/st/joint-s2t-mustc-en-de
+st_ckpt: checkpoint_ave_10.pt
+mwersegmenter_root: ${.work_dir}/tools/mwerSegmenter
+st_metrics: [bleu, bertscore]
+bleurt_path: ${.work_dir}/models/BLEURT-20

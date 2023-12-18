@@ -1,0 +1,8 @@
+data_dir: ${work_dir}/data/corpus/MuST-C/v2.0_IWSLT2022/en-de/data
+src_lang: en
+tgt_lang: de
+
+wav_dir: ${.data_dir}/dev/wav
+orig_seg_yaml: ${.data_dir}/dev/txt/dev.yaml
+orig_src_txt: ${.data_dir}/dev/txt/dev.en
+orig_tgt_txt: ${.data_dir}/dev/txt/dev.de

@@ -1,0 +1,8 @@
+data_dir: ${work_dir}/data/corpus/MuST-C/v1.0/en-pt/data
+src_lang: en
+tgt_lang: pt
+
+wav_dir: ${.data_dir}/tst-COMMON/wav
+orig_seg_yaml: ${.data_dir}/tst-COMMON/txt/tst-COMMON.yaml
+orig_src_txt: ${.data_dir}/tst-COMMON/txt/tst-COMMON.en
+orig_tgt_txt: ${.data_dir}/tst-COMMON/txt/tst-COMMON.pt

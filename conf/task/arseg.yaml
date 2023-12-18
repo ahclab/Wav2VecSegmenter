@@ -1,0 +1,27 @@
+autoregression: True
+
+model:
+  _target_: lib.models.AutoRegSegmenter
+  wav2vec_model_name: facebook/wav2vec2-xls-r-300m
+  wav2vec_keep_layers: 15
+  finetune_wav2vec: False
+  n_transformer_enc_layers: 1
+  n_transformer_enc_heads: 8
+  n_transformer_dec_layers: 4
+  n_transformer_dec_heads: 8
+  init_dropout: 0.1
+
+train_generator:
+  _target_: lib.dataset.RandomDataloaderGenerator
+
+eval_generator:
+  _target_: lib.dataset.FixedDataloaderGenerator
+  inference_times: 1
+
+vocab:
+  _target_: lib.datautils.BaseVocabulary
+
+loss:
+  _target_: torch.nn.CrossEntropyLoss
+  tag: ce
+  reduction: none

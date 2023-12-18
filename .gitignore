@@ -1,0 +1,13 @@
+.venv
+
+/tools/
+/data/
+/models/
+/outputs/
+/results/
+/others/
+
+__pycache__/
+
+.DS_Store
+*.sw?
