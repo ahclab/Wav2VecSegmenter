@@ -164,9 +164,9 @@ def main(config: DictConfig) -> None:
 
     init(config)
 
-    result_dir = hydra.core.hydra_config.HydraConfig.get()["runtime"]["output_dir"]
+    result_dir = config.output_dir
     logger.info(f"Output directory : [{result_dir}]")
-    cust_seg_yaml = Path(result_dir) / config.cust_seg_yaml
+    cust_seg_yaml = config.cust_seg_yaml
 
     yaml_content = generate(config)
 
